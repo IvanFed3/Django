@@ -1,6 +1,6 @@
 !!! DO NOT FORGET TO GIVE THIS SOME DESCRIPTIVE TITLE (e.g. Auth System)!!!
 
-FYI: @shorodilov, @PonomaryovVladyslav
+FYI: @shorodilov
 
 ## Description
 

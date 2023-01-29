@@ -14,12 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from . import views
+from task.views import task_detail_view, task_list_view
 
 
 
 urlpatterns = [
+
+    # Homework1
     path("homepage/", views.home_task1),
     path("home/", views.home_task1),
     path("", views.home_task1),
@@ -31,5 +34,9 @@ urlpatterns = [
     path('sum_num/<int:x>/<int:y>/', views.sum_view), #< int, str, slug, uid, path : argument> slug - стрічка, яка містить a-z, 0-1, _ path - теж стрічка, але може містити "/"
     path ('users/<str:username>/', views.user_view),
     path('admin/', admin.site.urls), #path/re_path ("route",  view, Optional [name])
+
+
+    path('task/', include('task.urls'))
+
 
 ]
