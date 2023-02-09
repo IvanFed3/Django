@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-from task.views import task_detail_view, task_list_view
+
 
 
 
@@ -30,13 +30,10 @@ urlpatterns = [
     path("fib/<int:n>", views.home_task3),
     path ('greeting/<str:name>/', views.home_task4),
 
-    path("files/<path:filepath>", views.file_view),
-    path('sum_num/<int:x>/<int:y>/', views.sum_view), #< int, str, slug, uid, path : argument> slug - стрічка, яка містить a-z, 0-1, _ path - теж стрічка, але може містити "/"
-    path ('users/<str:username>/', views.user_view),
-    path('admin/', admin.site.urls), #path/re_path ("route",  view, Optional [name])
 
+    path('task/', include('task.urls')),
+    path('', include('user.urls'))
 
-    path('task/', include('task.urls'))
 
 
 ]

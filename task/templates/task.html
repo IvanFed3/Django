@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task list</title>
+    {% include 'nav.html' with  tasks=tasks %}
+</head>
+<body>
+
+    <ul>
+        {% for foo in tasks %}
+            {% if foo.completed %}
+                <li><a href="{% url 'task' foo.id %}">{{ foo.title }}</a>  <input type="checkbox" checked />  </li>
+            {% else %}
+                <li><a href="{% url 'task' foo.id %}">{{ foo.title }}</a>  <input type="checkbox"  />  </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

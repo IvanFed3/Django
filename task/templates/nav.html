@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/css_nav.css" %}" />
+
+
+<div id="container">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'register'  %}">Register</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+
+            <li><a href="{% url 'tasks' %}">Tasks</a>
+            <!-- First Tier Drop Down -->
+            <ul>
+                {% for foo in tasks %}
+                    <li class="submenu-item"><a href="{% url 'task' foo.id %}" class="submenu-link">{{ foo.title }}</a></li>
+                {% endfor %}
+            </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

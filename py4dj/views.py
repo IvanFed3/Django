@@ -33,3 +33,16 @@ def home_task3(request:HttpRequest, n:int):
 
 def home_task4(request: HttpRequest, name:str) ->HttpResponse:
     return HttpResponse (f"<p>Greeting, {name}</p>")
+
+#Homework2
+tasks = [
+    {"id":1, "title":"Task #1", "complated" : False},
+    {"id":2, "title":"Task #2", "complated" : False},
+    {"id":3, "title":"Task #3", "complated" : False},
+    {"id":4, "title":"Task #4", "complated" : False},
+    {"id":5, "title":"Task #5", "complated" : False}
+]
+
+def navbar (request:HttpRequest):
+    ctx = {"object_list":tasks}
+    return render(request,"task_list.html", ctx)
