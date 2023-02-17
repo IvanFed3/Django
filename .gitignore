@@ -22,3 +22,6 @@ pgdata/
 pgsql/
 *.sqlite3
 *.db
+py4dj/templates/base.html
+py4dj/templates/base.html
+py4dj/templates/base.html
